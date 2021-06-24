@@ -8,7 +8,6 @@ let users = [];
 
 onMount( async () =>{
 	const userService = new UserService()
-	console.log(config)
 	users = await userService.getAll()
 })
 </script>

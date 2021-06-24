@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import replace from '@rollup/plugin-replace';
 require('dotenv').config();
-console.log(process.env)
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -40,6 +40,7 @@ export default {
 	},
 	plugins: [
 		replace({
+			preventAssignment: true,
 			process: JSON.stringify({
 				env:{
 					API_URL: process.env.API_URL
